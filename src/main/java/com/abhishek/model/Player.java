@@ -2,12 +2,12 @@ package com.abhishek.model;
 
 public class Player {
     private final int id;
-    private boolean turn;
+    private int turn;
     private int score;
 
     public Player(int id) {
         this.id = id;
-        this.turn = true;
+        this.turn = 0;
         this.score = 0;
     }
 
@@ -19,7 +19,7 @@ public class Player {
         return score;
     }
 
-    public boolean isTurn() {
+    public int getTurn() {
         return turn;
     }
 
@@ -27,7 +27,7 @@ public class Player {
         this.score = score;
     }
 
-    public void setTurn(boolean turn) {
+    public void setTurn(int turn) {
         this.turn = turn;
     }
 }

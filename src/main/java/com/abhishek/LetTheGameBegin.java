@@ -11,7 +11,7 @@ public class LetTheGameBegin {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Welcome to 'Roll a Dice'....");
         System.out.println("**********************************************************************");
-        System.out.println("Please enter number of players(n) and com.abhishek.game point(m) separated by space. For eg:");
+        System.out.println("Please enter number of players(n) and game point(m) separated by space. For eg:");
         System.out.println("n m");
         try {
             String[] input = br.readLine().split(" ");
@@ -19,16 +19,16 @@ public class LetTheGameBegin {
             DiceGame.game_point = Integer.parseInt(input[1]);
 
             System.out.println("\n**********************************************************************");
-            System.out.println("Initializing com.abhishek.game....Assigning turns");
+            System.out.println("Initializing game....Assigning turns");
             DiceGame.setPlayerTurns();
 
-            System.out.println("\n*************************Let the com.abhishek.game begin*****************************");
+            System.out.println("\n*************************Let the game begin*****************************");
             DiceGame.startGame(br);
 
-            System.out.println("The com.abhishek.game has ended...");
+            System.out.println("The game has ended...");
             System.out.println("\n***************************Thank You**********************************");
         } catch (IOException e) {
-            System.out.println("Error in the input!! Please RESTART the com.abhishek.game.");
+            System.out.println("Error in the input!! Please RESTART the game.");
             System.exit(1);
         }
     }

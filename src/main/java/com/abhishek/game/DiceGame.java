@@ -62,8 +62,8 @@ public class DiceGame {
                 }
 
                 // Check if player has got 1 in the previous turn
-                if(!current_player.isTurn()) {
-                    current_player.setTurn(true);
+                if(current_player.getTurn() == 2) {
+                    current_player.setTurn(0);
                     System.out.println("Player-" + p + " you can play in the next turn");
                     continue;
                 }
@@ -82,7 +82,7 @@ public class DiceGame {
 
                 // If the player achieves game point, then the game is completed for the player
                 if(player_score >= game_point) {
-                    current_player.setTurn(false);
+                    current_player.setTurn(2);
                     current_player.setScore(game_point);
                     System.out.println("**********************************************************************");
                     System.out.println("Player-" + p + " has completed the game and position is " + (no_of_players - playing_players_count + 1));
@@ -106,8 +106,11 @@ public class DiceGame {
 
                 // If the current dice score is 1, then the next turn for the player is skipped
                 if(current_score == 1 && playing_players_count > 1) {
-                    System.out.println("Sorry Player-" + p + " you will miss your turn for next round!!");
-                    current_player.setTurn(false);
+                    int no_of_1s_scored = current_player.getTurn() + 1;
+                    current_player.setTurn(no_of_1s_scored);
+                    if(no_of_1s_scored == 2) {
+                        System.out.println("Sorry Player-" + p + " you will miss your turn for next round!!");
+                    }
                 }
 
                 // Print the player ranking
